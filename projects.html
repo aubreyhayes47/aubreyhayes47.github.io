@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Projects</title>
+    </head>
+    <body class="text-center text-light" >
+                <!--This creates a dark navbar against a gray bg with white lettering-->
+                <ul class="navbar navbar-dark bg-dark" >
+
+                <li class="nav-item">
+                    <a class="navbar-brand" href="index.html">aubreyhayes.me</a>
+                </li>
+
+                <li class="nav-item ms-auto" href="./about-me.html">
+                    <a class="navbar-brand" href="about-me.html">About</a>
+                </li>
+
+                <li class="nav-item" >
+                    <a class="navbar-brand" href="projects.html">Projects</a>
+                </li>
+
+                <li class="nav-item" >
+                    <a class="navbar-brand" href="resume.html">Resume</a>
+                </li>
+
+                <li class="nav-item" >
+                    <a class="navbar-brand" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <h1>
+                Projects
+            </h1>
+            <h4 class="position-relative" style="left:17%;padding:1rem;width:66%;">
+                aubreyhayes.me
+            </h4>
+            <div class="embed-responsive embed-responsive-16by9" id="site-demo">
+                <iframe class="embed-responsive-item" src="https://youtube.com/embed/GY0ARNosKtQ" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
+            </div>
+            <p class="position-relative" style="left:25%;width:50%;">
+                This is the first site that I ever built. You can find more details about the tools I used to do so on the <a href="about-me.html">about</a> page.
+            </p>
+            <script>
+                document.querySelector('#demo-video').addEventListener('click', function(){
+                    // document.querySelector("#site-demo").insertAdjacentHTML("afterend", "<p id='thanks' class='alert alert-light'>Thanks for watching!</p>")
+                    // // Wait for 2 seconds before removing the code
+                    // setTimeout(document.querySelector("#thanks").remove(), 2000)
+                    alert("hello")
+                })
+            </script>
+    </body>
+</html>
