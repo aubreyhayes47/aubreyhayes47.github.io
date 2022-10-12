@@ -16,7 +16,6 @@ h1{
     padding:2.5rem;
 }
 
-
 h4{
     width:65%;
     padding:2rem;
@@ -24,4 +23,61 @@ h4{
 
 h6 {
     padding:1rem;
+}
+
+
+h4.blog-title{
+    width:65%;
+    text-align: left;
+    margin-left: 17.5%;
+    padding:0rem;
+}
+
+h1.blog-title{
+    margin-top: 2rem;
+    width:65%;
+    text-align: left;
+    margin-left: 17.5%;
+    padding:0rem;
+}
+
+p.blog-date{
+    width: 65%;
+    margin-left: 17.5%;
+    text-align: left;
+    font-size: small;
+}
+
+p.blog-subtitle{
+    width:65%;
+    text-align: left;
+    margin-left: 17.5%;
+    margin-bottom: 2rem;
+    padding:0rem;
+}
+
+p.blog-text{
+    width:65%;
+    text-align: left;
+    margin-left: 17.5%;
+    padding:0rem;
+}
+
+
+a.blog-link{
+    text-decoration: none;
+}
+
+a.blog-link:hover{
+    text-decoration: underline;
+    color:white;
+}
+
+.spoiler{
+    color:white;
+    background-color: white;
+}
+
+.spoiler:hover{
+    background-color: #494949;
 }
