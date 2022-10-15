@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NKt/W4aVTRBcMzKJGSE2dobnlKrGFt74k4GAwfg6h9vInc7XjiTVbzZD5HzY6piW6zChJQN/VGwiWkD7ITEdlQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aubre\\Documents\\pong\\Pong.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aubre\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\aubre\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,9 @@
+C:\Users\aubre\Documents\pong\.mono\temp\obj\Debug\Pong.csproj.AssemblyReference.cache
+C:\Users\aubre\Documents\pong\.mono\temp\obj\Debug\Pong.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aubre\Documents\pong\.mono\temp\obj\Debug\Pong.AssemblyInfoInputs.cache
+C:\Users\aubre\Documents\pong\.mono\temp\obj\Debug\Pong.AssemblyInfo.cs
+C:\Users\aubre\Documents\pong\.mono\temp\obj\Debug\Pong.csproj.CoreCompileInputs.cache
+C:\Users\aubre\Documents\pong\.mono\temp\bin\Debug\Pong.dll
+C:\Users\aubre\Documents\pong\.mono\temp\bin\Debug\Pong.pdb
+C:\Users\aubre\Documents\pong\.mono\temp\obj\Debug\Pong.dll
+C:\Users\aubre\Documents\pong\.mono\temp\obj\Debug\Pong.pdb

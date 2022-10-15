@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://PlayerTwo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PlayerOne.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.cs" type="Script" id=3]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://xolonium-regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 400, 6 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0196078, 0.054902, 0.145098, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StartPositionOne" type="Position2D" parent="."]
+position = Vector2( 75, 300 )
+
+[node name="StartPositionTwo" type="Position2D" parent="."]
+position = Vector2( 725, 300 )
+
+[node name="PlayerOne" parent="." instance=ExtResource( 2 )]
+position = Vector2( -175, 79 )
+
+[node name="PlayerTwo" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1397, 93 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 400, 300 )
+
+[node name="Ball" parent="." instance=ExtResource( 4 )]
+position = Vector2( 312, -28 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.5
+margin_top = 60.0
+margin_right = 20.5
+margin_bottom = 80.0
+text = "Start"
+
+[node name="ScoreOneLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+
+[node name="ScoreTwoLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -58.0
+margin_right = 20.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+
+[node name="WinnerLabel" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -276.5
+margin_top = -39.0
+margin_right = 276.5
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2( 400, -4 )
+shape = SubResource( 4 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 400, 604 )
+shape = SubResource( 4 )
+
+[connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
