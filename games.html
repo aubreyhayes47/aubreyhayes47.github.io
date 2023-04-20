@@ -18,28 +18,29 @@
     </head>
     <body class="text-center text-light" >
                 <!--This creates a dark navbar against a gray bg with white lettering-->
-                <ul class="navbar navbar-dark bg-dark" >
-
-                <li class="nav-item">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <a class="navbar-brand" href="index.html">aubreyhayes.me</a>
-                </li>
-
-                <li class="nav-item ms-auto" href="./about-me.html">
-                    <a class="navbar-brand" href="about-me.html">About</a>
-                </li>
-
-                <li class="nav-item" >
-                    <a class="navbar-brand" href="projects.html">Projects</a>
-                </li>
-
-                <li class="nav-item" >
-                    <a class="navbar-brand" href="resume.html">Resume</a>
-                </li>
-
-                <li class="nav-item" >
-                    <a class="navbar-brand" href="contact.html">Contact</a>
-                </li>
-            </ul>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="about-me.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="resume.html">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
             <h1>
                 Games
             </h1>
@@ -52,5 +53,13 @@
             <p class="position-relative" style="left:25%;width:50%;">
                 This is a game that allows two players to play ping pong on a shared keyboard. You can find the full source code and details about the tools I used to develop the game on my <a href="https://github.com/aubreyhayes47">Github</a> page.
             </p>
+        <!-- Include jQuery before the Bootstrap JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <!-- Include Popper.js before the Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.1/dist/umd/popper.min.js"></script>
+
+        <!-- Include the Bootstrap JavaScript at the end of the body -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>
