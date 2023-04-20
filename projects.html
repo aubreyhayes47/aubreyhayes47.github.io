@@ -58,7 +58,7 @@
                 Unbeatable Tic Tac Toe
             </h4>
             <div class="embed-responsive embed-responsive-16by9" id="site-demo">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SHiG3UgaGPQ" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
+                <iframe class="lazy-iframe embed-responsive-item" src="https://www.youtube.com/embed/SHiG3UgaGPQ" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
             </div>
             <p class="position-relative" style="left:25%;width:50%;">
                 This is  a Python application that provides users with an AI opponent that plays Tic Tac Toe with perfect strategy. You can find more details about the tools I used to develop it on my <a href="https://github.com/aubreyhayes47">Github page</a>.
@@ -67,7 +67,7 @@
                 Runescape Price Tracker
             </h4>
             <div class="embed-responsive embed-responsive-16by9" id="site-demo">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mrTpwOgf3Ik" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
+                <iframe class="lazy-iframe embed-responsive-item" src="https://www.youtube.com/embed/mrTpwOgf3Ik" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
             </div>
             <p class="position-relative" style="left:25%;width:50%;">
                 This is a web app that allows users to track prices of items in the MMORPG, Old School Runescape. You can find more details about the tools I used to develop it on my <a href="https://github.com/aubreyhayes47">Github page</a>.
@@ -76,7 +76,7 @@
                 Definitely Not Pong
             </h4>
             <div class="embed-responsive embed-responsive-16by9" id="site-demo">
-                <iframe class="embed-responsive-item" src="https://youtube.com/embed/HM_RzJwsRVY" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
+                <iframe class="lazy-iframe embed-responsive-item" src="https://youtube.com/embed/HM_RzJwsRVY" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
             </div>
             <h4 class="position-relative" style="left:17%;padding:1rem;width:66%;">
                 <a href="./games/pong.html">Play Here</a>
@@ -88,7 +88,7 @@
                 aubreyhayes.me
             </h4>
             <div class="embed-responsive embed-responsive-16by9" id="site-demo">
-                <iframe class="embed-responsive-item" src="https://youtube.com/embed/GY0ARNosKtQ" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
+                <iframe class="lazy-iframe embed-responsive-item" src="https://youtube.com/embed/GY0ARNosKtQ" loading="lazy" allowfullscreen width="50%" height="250rem" id="demo-video"></iframe>
             </div>
             <p class="position-relative" style="left:25%;width:50%;">
                 This is the first site that I ever built. You can find more details about the tools I used to do so on the <a href="about-me.html">about page</a>.
@@ -101,5 +101,37 @@
 
         <!-- Include the Bootstrap JavaScript at the end of the body -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>    
+        // Define a custom function to check if an element is visible in the viewport
+        const isElementVisible = (el) => {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+
+        // Create a function to load the iframe when it is visible
+        const loadIframeWhenVisible = (iframe) => {
+            if (isElementVisible(iframe)) {
+                // Set the src attribute of the iframe to the data-src value
+                iframe.src = iframe.dataset.src;
+                // Remove the "lazy-iframe" class to prevent re-loading
+                iframe.classList.remove("lazy-iframe");
+            }
+        };
+
+        // Attach an event listener to the "scroll" event to trigger the iframe loading
+        window.addEventListener("scroll", () => {
+            iframes.forEach(iframe => {
+                loadIframeWhenVisible(iframe);
+            });
+        });
+
+        // Load the iframes that are initially visible on page load
+        iframes.forEach(iframe => {
+            loadIframeWhenVisible(iframe);
+        });
+        </script>
     </body>
 </html>
