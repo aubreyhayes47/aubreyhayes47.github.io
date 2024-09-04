@@ -26,6 +26,9 @@
             form{
                 justify-content:center;
             }
+            body{
+                width:"15rem";
+            }
         </style>
     </head>
     <body class="text-center text-light" >
@@ -59,6 +62,7 @@
             <h1>
                 Legal Citations Generator
             </h1>
+        <p>The program allows users to input key case information such as case name, volume number, reporter, page number, court, and year, and it automatically formats these details into a properly structured citation according to industry-standard rules. </p>
            <form id="citationForm" onsubmit="generateCitations(event)" class="m-3 mx-auto">
         <label for="caseName">Case name:</label>
         <input type="text" id="caseName" name="caseName" required>
