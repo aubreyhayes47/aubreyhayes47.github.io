@@ -73,6 +73,7 @@
                 Legal Citations Generator
             </h1>
         <p>The program allows users to input key case information such as case name, volume number, reporter, page number, court, and year, and it automatically formats these details into a properly structured citation according to industry-standard rules. </p>
+        <p><b>Disclaimer:</b> This program is experimental and not meant for any use beyond mere curiosity. Do not use it for any academic, commercial, or other work. It may not reliably generate correct citations. Create and check all of your citations yourself for accurate results. Besides, I’m a 1L. You shouldn’t trust my program to make correct citations.</p>
            <form id="citationForm" onsubmit="generateCitations(event)" class="m-3 mx-auto">
         <label for="caseName">Case name:</label>
         <input type="text" id="caseName" name="caseName" required>
@@ -122,8 +123,7 @@
             <p>Good luck with your legal work!</p>
         </div>
     </div>
-    <p><b>Disclaimer:</b> This program is experimental and not meant for any use beyond mere curiosity. Do not use it for any academic, commercial, or other work. It may not reliably generate correct citations. Create and check all of your citations yourself for accurate results. Besides, I’m a 1L. You shouldn’t trust my program to make correct citations.</p>
-    
+        
     <script>
         function generateCitations(event) {
             event.preventDefault();
