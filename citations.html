@@ -16,20 +16,40 @@
         <link href="styles.css" rel="stylesheet">
         <title>Legal Citations Generator</title>
 
-        <style>
-            input {
-                display:block;
-            }
-            label{
-                display:block;
-            }
-            form{
-                justify-content:center;
-            }
-            body{
-                width:"10rem";
-            }
-        </style>
+       <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa; /* Optional: Adds a light background color */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input, label {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            text-align: left; /* Ensures labels align to the left */
+        }
+
+        button {
+            width: auto;
+            padding: 10px 20px;
+        }
+    </style>
     </head>
     <body class="text-center text-light" >
                 <!--This creates a dark navbar against a gray bg with white lettering-->
