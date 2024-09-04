@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWDJ61LY19"></script> -->
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CWDJ61LY19');
+        </script>
+        <meta name="viewport" content="initial-scale=1 width=device-width">
+        <meta name="description" content="Check out Aubrey Hayes' projects on their personal website. From web development to design, explore Aubrey's portfolio showcasing his skills and expertise. Get inspired by Aubrey's creative projects.">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet">
+        <title>Resume</title>
+    </head>
+    <body class="text-center text-light" >
+                <!--This creates a dark navbar against a gray bg with white lettering-->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="index.html">aubreyhayes.me</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="about-me.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="resume.html">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+            <h1>
+                Legal Citation Generator
+            </h1>
+           <form id="citationForm" onsubmit="generateCitations(event)">
+        <label for="caseName">Case name:</label>
+        <input type="text" id="caseName" name="caseName" required>
+
+        <label for="shortName">Shortened case name:</label>
+        <input type="text" id="shortName" name="shortName" required>
+
+        <label for="reporterName">Reporter name:</label>
+        <input type="text" id="reporterName" name="reporterName" required>
+
+        <label for="reporterIssue">Reporter volume:</label>
+        <input type="text" id="reporterIssue" name="reporterIssue" required>
+
+        <label for="casePage">Case page:</label>
+        <input type="text" id="casePage" name="casePage" required>
+
+        <label for="pincitePage">Pincite page (Leave blank if citing whole case):</label>
+        <input type="text" id="pincitePage" name="pincitePage">
+
+        <label for="courtName">Court name:</label>
+        <input type="text" id="courtName" name="courtName">
+
+        <label for="caseDate">Case date:</label>
+        <input type="text" id="caseDate" name="caseDate" required>
+
+        <button type="submit">Generate Citations</button>
+    </form>
+
+    <div id="results" class="results" style="display:none;">
+        <div class="result-section">
+            <strong>Full citation:</strong>
+            <p id="fullCitation"></p>
+        </div>
+        <div class="result-section">
+            <strong>Shortened citation:</strong>
+            <p id="shortCitation"></p>
+        </div>
+        <div class="result-section">
+            <strong>No-name shortened citation:</strong>
+            <p id="noNameCitation"></p>
+        </div>
+        <div class="result-section">
+            <strong><span class="underline">Id.</span> citation:</strong>
+            <p id="idCitation"></p>
+        </div>
+        <div class="result-section">
+            <p>Good luck with your legal work!</p>
+        </div>
+    </div>
+
+    <script>
+        function generateCitations(event) {
+            event.preventDefault();
+
+            const caseName = document.getElementById('caseName').value.trim();
+            const shortName = document.getElementById('shortName').value.trim();
+            const reporterName = document.getElementById('reporterName').value.trim();
+            const reporterIssue = document.getElementById('reporterIssue').value.trim();
+            const casePage = document.getElementById('casePage').value.trim();
+            const pincitePage = document.getElementById('pincitePage').value.trim();
+            let courtName = document.getElementById('courtName').value.trim();
+            let caseDate = document.getElementById('caseDate').value.trim();
+
+            let fullCitation = `<span class="underline">${caseName}</span>, ${reporterIssue} ${reporterName} ${casePage}`;
+            let shortCitation = `<span class="underline">${shortName}</span>, ${reporterIssue} ${reporterName}`;
+            let noNameCitation = `${reporterIssue} ${reporterName}`;
+
+            if (pincitePage) {
+                fullCitation += `, ${pincitePage}`;
+                shortCitation += ` at ${pincitePage}`;
+                noNameCitation += ` at ${pincitePage}`;
+            } else {
+                shortCitation += ` ${casePage}`;
+                noNameCitation += ` ${casePage}`;
+            }
+
+            if (courtName) {
+                courtName = `(${courtName} `;
+                fullCitation += ` ${courtName}`;
+            } else {
+                fullCitation += ` (`;
+            }
+
+            caseDate = `${caseDate})`;
+            fullCitation += `${caseDate}`;
+
+            const idCitation = `<span class="underline">Id.</span> at ${pincitePage || casePage}`;
+
+            document.getElementById('fullCitation').innerHTML = fullCitation;
+            document.getElementById('shortCitation').innerHTML = shortCitation;
+            document.getElementById('noNameCitation').innerHTML = noNameCitation;
+            document.getElementById('idCitation').innerHTML = idCitation;
+
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+        </body>
+</html>
