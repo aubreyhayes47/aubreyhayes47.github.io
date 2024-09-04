@@ -17,11 +17,39 @@
         <title>Legal Citations Generator</title>
         <style>
         body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
             justify-content: center;  /* Center horizontally */
             align-items: center;      /* Center vertically */
             height: 100vh;            /* Full viewport height */
         }
-        </style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+        .result-section {
+            margin-bottom: 15px;
+        }
+    </style>
     </head>
     <body class="text-center text-light" >
                 <!--This creates a dark navbar against a gray bg with white lettering-->
@@ -140,7 +168,7 @@
             caseDate = `${caseDate})`;
             fullCitation += `${caseDate}`;
 
-            const idCitation = `<span style="text-decoration:underline>Id.</span> at ${pincitePage || casePage}`;
+            const idCitation = `<span class="underline">Id.</span> at ${pincitePage || casePage}`;
 
             document.getElementById('fullCitation').innerHTML = fullCitation;
             document.getElementById('shortCitation').innerHTML = shortCitation;
