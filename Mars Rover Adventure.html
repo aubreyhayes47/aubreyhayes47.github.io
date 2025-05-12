@@ -9,30 +9,89 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Mars Rover Adventure.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Mars Rover Adventure" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="F5E8D3A0-1B2C-4D5E-8F9A-0123456789AB" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
-        /* This is where you could add custom CSS for Harlowe, but we're using the inline style block in the head for simplicity. */
+<tw-storydata name="Mars Rover Adventure" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="F5E8D3A0-1B2C-4D5E-8F9A-0123456789AB" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Changed from type="text/twine-css" to just <style> */
+        /* Styles for the old-school computer interface look */
+        body {
+            font-family: 'Press Start 2P', 'Courier New', monospace; /* Retro monospaced font */
+            color: #00FF00; /* Bright green text */
+            background-color: #000000; /* Black background */
+            padding: 20px;
+            font-size: 16px; /* Pixel fonts often look better at specific sizes */
+            line-height: 1.8; /* Increased line height for readability with pixel font */
+        }
+
+        /* Styling for the tw-story container, which Harlowe uses to wrap passages */
         tw-story {
-            background-color: #222; /* Dark background for the story area */
-            color: #eee;
+            /* This is the main container for your story's content when played.
+               Styles applied to 'body' will generally affect this too.
+               You might add specific margins or max-width here if needed. */
         }
+
         tw-passage {
-            background-color: #333;
-            border: 1px solid #555;
-            color: #eee;
+            background-color: #0A0A0A; /* Very dark grey, slightly off-black for passage background */
+            border: 1px solid #00FF00; /* Green border for passages */
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 8px #00FF00, inset 0 0 3px #008000; /* Green glow effect and subtle inner shadow */
+            border-radius: 0; /* Sharp corners */
         }
+
+
         tw-link {
-            color: #7af;
+            color: #FFFF00; /* Bright yellow for links */
+            text-decoration: underline;
+            font-weight: normal; /* Pixel fonts are often bold by default */
         }
+	a, a:visited{
+     color: #FFFF00;
+}
+
+
         tw-link:hover {
-            color: #9cf;
+            color: #000000; /* Black text on hover */
+            background-color: #00FF00; /* Green background on hover for links */
+            text-decoration: none;
         }
+
+        /* Styling for game over and success messages */
         .game-over {
-            color: #ff6666; /* Brighter red for dark background */
-            font-weight: bold;
+            color: #FF0000; /* Bright red for game over messages */
+            font-weight: normal; /* Consistent with pixel font style */
+            text-transform: uppercase;
+            display: block; /* Ensure it's on its own line */
+            margin-top: 1em;
+            padding: 10px;
+            border: 1px dashed #FF0000;
         }
+
         .success {
-            color: #66ff66; /* Brighter green for dark background */
-            font-weight: bold;
+            color: #00FF00; /* Bright green for success messages */
+            font-weight: normal; /* Consistent with pixel font style */
+            text-transform: uppercase;
+            display: block; /* Ensure it's on its own line */
+            margin-top: 1em;
+            padding: 10px;
+            border: 1px dashed #00FF00;
+        }
+
+        /* If you use h1, h2, etc. tags within your passage text, you can style them too */
+        tw-passage h1, tw-passage h2, tw-passage h3 {
+            color: #00FF00; /* Green headings */
+            text-transform: uppercase;
+        }
+
+        
+        // Optional blinking cursor effect (can be tricky and might require JavaScript for perfect sync)
+        tw-passage::after {
+            content: "_";
+            animation: blink 1s step-end infinite;
+            color: #00FF00;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
         </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="200,150" size="100,100">
 Welcome, Mission Controller!
