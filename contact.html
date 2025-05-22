@@ -1,65 +1,140 @@
-<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Serif%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <title>Keystone Web Crafters - Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <meta name="description" content="Get in touch with Keystone Web Crafters for a free quote or to discuss your web development project. Contact us via form, phone, or email." />
+    <meta name="keywords" content="contact us, web design quote, web development contact, Keystone Web Crafters" />
 
-<html lang="en">
-    <head>
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWDJ61LY19"></script> -->
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-CWDJ61LY19');
-        </script>
-        <meta name="viewport" content="initial-scale=1 width=device-width">
-        <meta name="description" content="Contact Aubrey Hayes via his personal website. Reach out to Aubrey for inquiries, collaborations, or questions about his work in web development and design. Connect with Aubrey to discuss your project needs.">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link href="styles.css" rel="stylesheet">
-        <title>Contact</title>
-    </head>
-    <body class="text-center text-light" >
-                <!--This creates a dark navbar against a gray bg with white lettering-->
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                  <a class="navbar-brand" href="index.html">aubreyhayes.me</a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                      <li class="nav-item">
-                        <a class="nav-link" href="about-me.html">About</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="resume.html">Resume</a>
-                      </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="citations.html">Citations</a>
-                        </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="contact.html">Contact</a>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-            <h4 class="m-3 mx-auto">
-                If you have questions about my experience, a line-item on my resume, or just want to chat about one of the projects listed <a href="projects.html">here</a>, don't hesitate to reach out!
-            </h4>
-            <h6>
-                The best way to contact me is by sending an email to: <a href="mailto:achayes@memphis.edu">achayes@memphis.edu</a>.
-            </h6>
-            <h6>
-                You can also check out my <a href="https://www.linkedin.com/in/aubrey-hayes-768091234" id="linkedin">LinkedIn</a> and <a href="https://github.com/aubreyhayes47">Github</a>.
-            </h6>
-        <!-- Include jQuery before the Bootstrap JavaScript -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-        <!-- Include Popper.js before the Bootstrap JavaScript -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.1/dist/umd/popper.min.js"></script>
-
-        <!-- Include the Bootstrap JavaScript at the end of the body -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Noto Serif", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eef3] px-4 py-3 sm:px-10">
+          <div class="flex items-center gap-4 text-[#0d151b]">
+            <a href="index.html" class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path></svg>
+            </a>
+            <h2 class="text-[#0d151b] text-lg font-bold leading-tight tracking-[-0.015em]">Keystone Web Crafters</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="hidden items-center gap-9 sm:flex">
+              <a class="text-[#0d151b] text-sm font-medium leading-normal" href="index.html">Home</a>
+              <a class="text-[#0d151b] text-sm font-medium leading-normal" href="services.html">Services</a>
+              <a class="text-[#0d151b] text-sm font-medium leading-normal" href="portfolio.html">Portfolio</a>
+              <a class="text-[#0d151b] text-sm font-medium leading-normal" href="about.html">About Us</a>
+              <a class="text-[#0d151b] text-sm font-medium leading-normal" href="contact.html">Contact</a>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-[#0e66b4] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <a href="contact.html" class="truncate text-white">Get a Quote</a>
+            </button>
+          </div>
+          <div class="sm:hidden">
+            <button class="text-[#0d151b] focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+          </div>
+        </header>
+        <div class="px-4 flex flex-1 justify-center py-5 sm:px-10 md:px-20 lg:px-40">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-center gap-3 p-4 text-center">
+              <div class="flex min-w-72 flex-col gap-3 w-full">
+                <p class="text-[#0d151b] tracking-light text-[32px] font-bold leading-tight">Get a Quote</p>
+                <p class="text-[#4c759a] text-sm font-normal leading-normal">
+                  Let's discuss your project. Please fill out the form below, and we'll get back to you within 24 hours.
+                </p>
+              </div>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="49bed33c-47d4-4f96-a61f-c693b1d16c80"> <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3 mx-auto">
+                <label class="flex flex-col min-w-40 flex-1 w-full">
+                  <p class="text-[#0d151b] text-base font-medium leading-normal pb-2">Name</p>
+                  <input
+                    placeholder="Your Name"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-[#0d151b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-14 placeholder:text-[#4c759a] p-4 text-base font-normal leading-normal"
+                    name="name"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3 mx-auto">
+                <label class="flex flex-col min-w-40 flex-1 w-full">
+                  <p class="text-[#0d151b] text-base font-medium leading-normal pb-2">Email</p>
+                  <input
+                    placeholder="Your Email"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-[#0d151b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-14 placeholder:text-[#4c759a] p-4 text-base font-normal leading-normal"
+                    name="email"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3 mx-auto">
+                <label class="flex flex-col min-w-40 flex-1 w-full">
+                  <p class="text-[#0d151b] text-base font-medium leading-normal pb-2">Company</p>
+                  <input
+                    placeholder="Your Company"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-[#0d151b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-14 placeholder:text-[#4c759a] p-4 text-base font-normal leading-normal"
+                    name="company"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3 mx-auto">
+                <label class="flex flex-col min-w-40 flex-1 w-full">
+                  <p class="text-[#0d151b] text-base font-medium leading-normal pb-2">Message</p>
+                  <textarea
+                    placeholder="Describe your project requirements"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-[#0d151b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none min-h-36 placeholder:text-[#4c759a] p-4 text-base font-normal leading-normal"
+                    name="message"
+                  ></textarea>
+                </label>
+              </div>
+              <div class="flex px-4 py-3 justify-center">
+                <button
+                  type="submit"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded h-10 px-4 bg-[#0e66b4] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                  <span class="truncate">Submit</span>
+                </button>
+              </div>
+            </form>
+            <h3 class="text-[#0d151b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center">Contact Information</h3>
+            <p class="text-[#0d151b] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">Phone: (901) 602-7006</p>
+            <p class="text-[#0d151b] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">Email: info@keystoneweb.dev</p>
+            <div class="flex px-4 py-3 justify-center">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded object-cover max-w-[480px]"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsRY-SrV3hnm1oi1QK4siVaFJ1DTmKQXUV1B3oWfhbCVwyDHjjfEOpTgDW2Ugccqtil5mbtiafjG9CJK3Sa1bW3Ks_GIKIe9nfGBki27H9cvD0bILpWc8OrzPrNBTxgCuJIxRrE_j9ID8FKJURIgN3mTatWxiVt3kzZkrZcYa5oTjwRO6UwUJ11ri5g_9DGjEWhZ3hIODRJ7rxHczbxZMhpCTIkbVCz9LquSiVE09P58LlxCm66kmBd1FYH3Alex5VnGzKUD51nuoh");'
+              ></div>
+            </div>
+          </div>
+        </div>
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#4c759a] text-base font-normal leading-normal min-w-40" href="index.html">Home</a>
+                <a class="text-[#4c759a] text-base font-normal leading-normal min-w-40" href="services.html">Services</a>
+                <a class="text-[#4c759a] text-base font-normal leading-normal min-w-40" href="portfolio.html">Portfolio</a>
+                <a class="text-[#4c759a] text-base font-normal leading-normal min-w-40" href="about.html">About Us</a>
+                <a class="text-[#4c759a] text-base font-normal leading-normal min-w-40" href="contact.html">Contact</a>
+              </div>
+              <p class="text-[#4c759a] text-base font-normal leading-normal">keystoneweb.dev | (901) 602-7006</p>
+              <p class="text-[#4c759a] text-base font-normal leading-normal">© 2025 Keystone Web Crafters. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
 </html>

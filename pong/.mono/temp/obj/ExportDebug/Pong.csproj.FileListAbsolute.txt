@@ -1,9 +1,0 @@
-C:\Users\aubre\Documents\pong\.mono\temp\bin\ExportDebug\Pong.dll
-C:\Users\aubre\Documents\pong\.mono\temp\bin\ExportDebug\Pong.pdb
-C:\Users\aubre\Documents\pong\.mono\temp\obj\ExportDebug\Pong.csproj.AssemblyReference.cache
-C:\Users\aubre\Documents\pong\.mono\temp\obj\ExportDebug\Pong.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\aubre\Documents\pong\.mono\temp\obj\ExportDebug\Pong.AssemblyInfoInputs.cache
-C:\Users\aubre\Documents\pong\.mono\temp\obj\ExportDebug\Pong.AssemblyInfo.cs
-C:\Users\aubre\Documents\pong\.mono\temp\obj\ExportDebug\Pong.csproj.CoreCompileInputs.cache
-C:\Users\aubre\Documents\pong\.mono\temp\obj\ExportDebug\Pong.dll
-C:\Users\aubre\Documents\pong\.mono\temp\obj\ExportDebug\Pong.pdb
