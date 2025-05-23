@@ -14,6 +14,15 @@
     <meta name="keywords" content="contact us, web design quote, web development contact, Keystone Web Crafters" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16466613402"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-16466613402');
+    </script>
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Noto Serif", "Noto Sans", sans-serif;'>
@@ -23,7 +32,9 @@
             <a href="index.html" class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path></svg>
             </a>
+            <a href="index.html">
             <h2 class="text-[#0d151b] text-lg font-bold leading-tight tracking-[-0.015em]">Keystone Web Crafters</h2>
+            </a>
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="hidden items-center gap-9 sm:flex">
@@ -40,7 +51,7 @@
             </button>
           </div>
           <div class="sm:hidden">
-            <button class="text-[#0d151b] focus:outline-none">
+            <button class="text-[#111418] focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
           </div>
@@ -64,6 +75,7 @@
                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-[#0d151b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-14 placeholder:text-[#4c759a] p-4 text-base font-normal leading-normal"
                     name="name"
                     value=""
+                    required
                   />
                 </label>
               </div>
@@ -75,6 +87,7 @@
                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-[#0d151b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-14 placeholder:text-[#4c759a] p-4 text-base font-normal leading-normal"
                     name="email"
                     value=""
+                    required
                   />
                 </label>
               </div>
@@ -91,7 +104,7 @@
               </div>
               <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3 mx-auto">
                 <label class="flex flex-col min-w-40 flex-1 w-full">
-                  <p class="text-[#0d151b] text-base font-medium leading-normal pb-2">Message</p>
+                  <p class="text-[#0d151b] text-base font-medium leading-normal pb-2">Tell us what you need</p>
                   <textarea
                     placeholder="Describe your project requirements"
                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded text-[#0d151b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none min-h-36 placeholder:text-[#4c759a] p-4 text-base font-normal leading-normal"
@@ -107,6 +120,7 @@
                   <span class="truncate">Submit</span>
                 </button>
               </div>
+              <input type="hidden" name="redirect" value="https://keystoneweb.dev/thank_you">
             </form>
             <h3 class="text-[#0d151b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 text-center">Contact Information</h3>
             <p class="text-[#0d151b] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">Phone: (901) 602-7006</p>
