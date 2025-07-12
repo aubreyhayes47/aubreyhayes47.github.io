@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 'Ghosts' Framework: An Interactive Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Calm Harmony (Beige/Cream background, Charcoal text, Muted Teal/Slate accent) -->
+    <!-- Application Structure Plan: A single-page, vertical-scrolling interactive narrative. The structure introduces the core 'Ghosts' framework with an interactive diagram, then provides dedicated sections for each 'ghost' using interactive components like a persona explorer and a visualized dialogue. It concludes with an accordion for the critical assessment. This structure was chosen to transform the dense, conceptual report into an engaging, explorable experience, prioritizing user understanding over mirroring the report's linear layout. -->
+    <!-- Visualization & Content Choices: The report is qualitative, so no data charts are used. Key concepts are visualized: Framework Diagram (HTML/JS) to introduce the model interactively. AI Persona Explorer (HTML/JS) to compare the 'Default Ghosts'. Dialogue Visualization (Styled HTML) to show the 'Adaptive Ghost' in action. Accordion (HTML/JS) to organize the dense 'Critical Assessment' text. All choices aim to make abstract concepts tangible and interactive. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF5;
+            color: #334155;
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #0d9488;
+            border-color: #0d9488;
+        }
+        .ghost-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ghost-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .ghost-card.active {
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 2px #0d9488;
+            border-color: #0d9488;
+        }
+        .content-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
+        }
+        .content-panel.open {
+            max-height: 1000px;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding-top 0.5s ease-out, padding-bottom 0.5s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+        }
+        .persona-btn {
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .persona-btn.active {
+            background-color: #0d9488;
+            color: white;
+        }
+        .chat-bubble {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-3">
+            <ul class="flex justify-center items-center space-x-4 md:space-x-8 text-sm md:text-base">
+                <li><a href="#framework" class="nav-link font-medium border-b-2 border-transparent pb-1">The Big Idea</a></li>
+                <li><a href="#deepdive" class="nav-link font-medium border-b-2 border-transparent pb-1">See It In Action</a></li>
+                <li><a href="#assessment" class="nav-link font-medium border-b-2 border-transparent pb-1">The Fine Print</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <section class="text-center mb-20 md:mb-32">
+            <h1 class="text-4xl md:text-6xl font-bold text-slate-800 mb-4">AI as a Mirror</h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">We often think of AI as an objective calculator. But what if it's more like a mirror, reflecting hidden biases—including our own? This page explores a fascinating case study that reveals how AI works and what it can teach us about ourselves.</p>
+        </section>
+
+        <section id="framework" class="mb-20 md:mb-32 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">The Big Idea: A Three-Part System of Bias</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">The original research suggests that "bias" isn't one single thing. It's a system that operates in three distinct ways. Researchers gave these concepts memorable names: the "Ghosts." Click each one to learn more.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div id="ghost-btn-1" class="ghost-card cursor-pointer p-6 bg-white rounded-xl border-2 border-slate-200 text-center">
+                    <div class="text-4xl mb-4">👻</div>
+                    <h3 class="text-xl font-bold text-slate-800">The Default Ghost</h3>
+                    <p class="text-slate-500 mt-2">Our built-in starting point or "factory settings."</p>
+                </div>
+                <div id="ghost-btn-2" class="ghost-card cursor-pointer p-6 bg-white rounded-xl border-2 border-slate-200 text-center">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold text-slate-800">The Adaptive Ghost</h3>
+                    <p class="text-slate-500 mt-2">Our ability to change our minds when challenged.</p>
+                </div>
+                <div id="ghost-btn-3" class="ghost-card cursor-pointer p-6 bg-white rounded-xl border-2 border-slate-200 text-center">
+                    <div class="text-4xl mb-4">👆</div>
+                    <h3 class="text-xl font-bold text-slate-800">The Director Ghost</h3>
+                    <p class="text-slate-500 mt-2">The power of the questions we choose to ask.</p>
+                </div>
+            </div>
+
+            <div id="ghost-content-1" class="content-panel bg-white/50 p-8 rounded-lg border border-slate-200">
+                <h4 class="font-bold text-2xl text-slate-800 mb-3">The Default Ghost: Our Built-in Bias</h4>
+                <p class="text-slate-600">Imagine you ask a business manager and a social worker for advice on the same problem. You'd get very different answers, right? The study found AIs do the same thing. Because of how it was built, one AI acted like a practical "Product Manager," while another acted like a caring "Social Worker." This is their "Default Ghost"—a built-in bias based on their origins. Humans have this too; our background, job, and culture give us a default way of seeing the world.</p>
+            </div>
+            <div id="ghost-content-2" class="content-panel bg-white/50 p-8 rounded-lg border border-slate-200">
+                <h4 class="font-bold text-2xl text-slate-800 mb-3">The Adaptive Ghost: Changing Our Minds</h4>
+                <p class="text-slate-600">What happens when you put those two experts in a room and make them debate? They start to see the other's point of view. The study showed AIs can do this too. When one AI was challenged by another's critique, it changed its approach, shifting from a "Product Manager" to a more thoughtful "Literary Critic." This "Adaptive Ghost" is our ability to grow and change our perspective when confronted with new information or a good argument.</p>
+            </div>
+            <div id="ghost-content-3" class="content-panel bg-white/50 p-8 rounded-lg border border-slate-200">
+                 <h4 class="font-bold text-2xl text-slate-800 mb-3">The Director Ghost: The Power of Questions</h4>
+                <p class="text-slate-600">But who got the debate started? A person. The most important "ghost" is the one asking the questions. The AI's response—whether it stays in its default mode or adapts—depends entirely on the prompt it's given. This "Director Ghost" is the power of our own intent and curiosity. It shows that we are not passive users; we are directors who guide the conversation and shape the outcome, both with AI and in our own lives.</p>
+            </div>
+        </section>
+
+        <section id="deepdive" class="mb-20 md:mb-32 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">See It In Action</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">These interactive examples show how the "ghosts" appeared in the original studies, making the abstract concepts more concrete.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 md:p-10 mb-8">
+                <h3 class="font-bold text-2xl text-slate-800 mb-2">Default Ghost: The AI Persona Explorer</h3>
+                <p class="text-slate-600 mb-6">The first study gave different AIs the same problem and found they acted like different types of consultants. Select an AI to see its "default" personality.</p>
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-6">
+                    <button class="persona-btn px-4 py-2 rounded-lg font-medium border-2 border-slate-300" data-persona="chatgpt">ChatGPT</button>
+                    <button class="persona-btn px-4 py-2 rounded-lg font-medium border-2 border-slate-300" data-persona="gemini">Gemini</button>
+                    <button class="persona-btn px-4 py-2 rounded-lg font-medium border-2 border-slate-300" data-persona="claude">Claude</button>
+                    <button class="persona-btn px-4 py-2 rounded-lg font-medium border-2 border-slate-300" data-persona="deepseek">Deepseek</button>
+                </div>
+                <div id="persona-display" class="relative min-h-[150px] p-6 bg-slate-50 rounded-lg">
+                    <div id="persona-chatgpt" class="persona-content absolute inset-0 p-6 transition-opacity duration-500 opacity-0">
+                        <h4 class="font-bold text-teal-700">The Product Manager</h4>
+                        <p class="text-slate-700 mt-2">Gave practical, business-like advice. It created checklists and focused on making a safe, successful product.</p>
+                    </div>
+                    <div id="persona-gemini" class="persona-content absolute inset-0 p-6 transition-opacity duration-500 opacity-0">
+                        <h4 class="font-bold text-teal-700">The Social Worker</h4>
+                        <p class="text-slate-700 mt-2">Focused on emotional well-being, the potential for psychological harm, and ethical responsibilities.</p>
+                    </div>
+                    <div id="persona-claude" class="persona-content absolute inset-0 p-6 transition-opacity duration-500 opacity-0">
+                        <h4 class="font-bold text-teal-700">The Professor</h4>
+                        <p class="text-slate-700 mt-2">Provided academic, nuanced answers, referencing historical context and ethical frameworks.</p>
+                    </div>
+                    <div id="persona-deepseek" class="persona-content absolute inset-0 p-6 transition-opacity duration-500 opacity-0">
+                        <h4 class="font-bold text-teal-700">The Auditor</h4>
+                        <p class="text-slate-700 mt-2">Focused on rules, compliance, and identifying risks with a systematic, rigid approach.</p>
+                    </div>
+                     <div id="persona-placeholder" class="persona-content absolute inset-0 p-6 flex items-center justify-center text-slate-500 opacity-100 transition-opacity duration-500">
+                        <p>Select a persona to view its details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 md:p-10">
+                <h3 class="font-bold text-2xl text-slate-800 mb-2">Adaptive Ghost: A Dialogue Visualized</h3>
+                <p class="text-slate-600 mb-6">The next study made the AIs "talk" to each other. Here’s a more detailed look at the five-step flow that led to a breakthrough.</p>
+                <div class="space-y-4">
+                    <div class="chat-bubble flex justify-end" style="animation-delay: 0.1s;">
+                        <div class="bg-slate-200 text-slate-800 p-3 rounded-lg max-w-md">
+                            <p class="font-bold text-sm">1. Initial Analysis (ChatGPT)</p>
+                            <p>Here is a safe, practical checklist for your project. This approach prioritizes user safety and clear rules.</p>
+                        </div>
+                    </div>
+                     <div class="chat-bubble flex justify-start" style="animation-delay: 0.6s;">
+                        <div class="bg-teal-600 text-white p-3 rounded-lg max-w-md">
+                            <p class="font-bold text-sm">2. Critique Prompt (The Director)</p>
+                            <p>"This is too superficial. Challenge this analysis from a deeper, more ethical perspective."</p>
+                        </div>
+                    </div>
+                    <div class="chat-bubble flex justify-start" style="animation-delay: 1.1s;">
+                        <div class="bg-violet-600 text-white p-3 rounded-lg max-w-md">
+                            <p class="font-bold text-sm">3. Forensic Critique (Gemini)</p>
+                            <p>The checklist approach ignores the potential for real emotional harm and fails to address the project's core philosophical audacity.</p>
+                        </div>
+                    </div>
+                    <div class="chat-bubble flex justify-end" style="animation-delay: 1.6s;">
+                        <div class="bg-slate-800 text-white p-3 rounded-lg max-w-md">
+                            <p class="font-bold text-sm">4. Synthesis & Adaptation (ChatGPT)</p>
+                            <p>That is a valid critique. My initial framework was insufficient. A deeper analysis reveals more complex issues of morality...</p>
+                        </div>
+                    </div>
+                    <div class="chat-bubble flex justify-start" style="animation-delay: 2.1s;">
+                        <div class="bg-teal-600 text-white p-3 rounded-lg max-w-md">
+                            <p class="font-bold text-sm">5. Creative Breakthrough (The Director)</p>
+                            <p>"Good. Now, what if we combine both? Use the practical safety from step 1 with the deep ethics from step 4 to create something new?"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="assessment" class="scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">The Fine Print</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">This was a small, exploratory experiment, not a definitive scientific law. To understand the full picture, it's important to know the limitations.</p>
+            </div>
+            <div class="space-y-4 max-w-4xl mx-auto">
+                <div class="accordion-item bg-white border border-slate-200 rounded-lg">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                        <span class="font-bold text-lg text-slate-700">This Was a Small-Scale Study</span>
+                        <span class="accordion-icon text-2xl text-teal-600 transform transition-transform">+</span>
+                    </button>
+                    <div class="accordion-content px-5 pb-5">
+                        <p class="text-slate-600">The framework is based on one specific, extended conversation with AI. Think of it as an interesting anecdote that reveals potential truths, not a universal rule proven by large-scale data. The "persona" names are just helpful labels, not proof that AIs have personalities.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white border border-slate-200 rounded-lg">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                        <span class="font-bold text-lg text-slate-700">The Questions Shaped the Answers</span>
+                        <span class="accordion-icon text-2xl text-teal-600 transform transition-transform">+</span>
+                    </button>
+                    <div class="accordion-content px-5 pb-5">
+                        <p class="text-slate-600">The person running the experiment was looking for a specific outcome, which influenced the results. Think of it like asking a leading question—you're more likely to get the answer you expect. The conclusions are a product of the interaction between the human's goals and the AI's programming.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white border border-slate-200 rounded-lg">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-5">
+                        <span class="font-bold text-lg text-slate-700">This Page Was Built by an AI</span>
+                        <span class="accordion-icon text-2xl text-teal-600 transform transition-transform">+</span>
+                    </button>
+                    <div class="accordion-content px-5 pb-5">
+                        <p class="text-slate-600">This webpage was built by an AI (me!). My own "Default Ghost" is to find patterns and create clear, tidy explanations. So, this neat framework is a product of my own built-in bias for order. The real world of bias is always messier.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center py-10 mt-20 border-t border-slate-200">
+        <p class="text-slate-500">Interactive analysis based on the "Ghosts" framework meta-study.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ghostButtons = [
+                document.getElementById('ghost-btn-1'),
+                document.getElementById('ghost-btn-2'),
+                document.getElementById('ghost-btn-3')
+            ];
+            
+            const ghostContents = [
+                document.getElementById('ghost-content-1'),
+                document.getElementById('ghost-content-2'),
+                document.getElementById('ghost-content-3')
+            ];
+
+            ghostButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    const isAlreadyOpen = button.classList.contains('active');
+
+                    ghostButtons.forEach(btn => btn.classList.remove('active'));
+                    ghostContents.forEach(content => content.classList.remove('open'));
+
+                    if (!isAlreadyOpen) {
+                        button.classList.add('active');
+                        ghostContents[index].classList.add('open');
+                    }
+                });
+            });
+
+            const personaButtons = document.querySelectorAll('.persona-btn');
+            const personaContents = document.querySelectorAll('.persona-content');
+            const personaPlaceholder = document.getElementById('persona-placeholder');
+
+            personaButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const persona = button.dataset.persona;
+                    
+                    personaButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    personaContents.forEach(content => {
+                        content.classList.add('opacity-0');
+                        content.classList.remove('opacity-100');
+                    });
+                    
+                    personaPlaceholder.classList.add('opacity-0');
+                    const targetContent = document.getElementById(`persona-${persona}`);
+                    targetContent.classList.remove('opacity-0');
+                    targetContent.classList.add('opacity-100');
+                });
+            });
+
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = item.querySelector('.accordion-icon');
+
+                header.addEventListener('click', () => {
+                    const isOpen = content.classList.contains('open');
+                    
+                    document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+                    document.querySelectorAll('.accordion-icon').forEach(i => {
+                        i.textContent = '+';
+                        i.classList.remove('rotate-45');
+                    });
+
+                    if (!isOpen) {
+                        content.classList.add('open');
+                        icon.textContent = '';
+                        icon.classList.add('rotate-45');
+                        setTimeout(() => icon.textContent = '+', 50);
+                    }
+                });
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
+
+            sections.forEach(section => observer.observe(section));
+
+        });
+    </script>
+
+</body>
+</html>
