@@ -1,31 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Keystone Web</title>
-  <style>
-    body { font-family: sans-serif; background-color: #fefefe; margin: 2rem; line-height: 1.6; color: #333; }
-    h1, h2 { color: #c94e50; }
-    footer { margin-top: 3rem; font-size: 0.9em; color: #888; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keystone Web Developers - $99/mo Websites for Small Businesses</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple checkmark icon */
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white text-gray-800 antialiased">
 
-  <h1>👋 Hello! You're at Keystone Web.</h1>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="#" class="text-2xl font-bold text-indigo-600">
+                Keystone Web Developers
+            </a>
+            <!-- CTA Button -->
+            <a href="#contact" class="hidden md:inline-block bg-indigo-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-indigo-700 transition duration-300">
+                Get Started
+            </a>
+        </nav>
+    </header>
 
-  <p>First things first: Sorry, wrong Aubrey.  
-  If you’re looking for <strong>Aubrey Plaza</strong>, she’s... not here.  
-  (But thanks for stopping by.)</p>
+    <!-- Section 1: Hero -->
+    <section class="bg-indigo-700 text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                Stop Worrying About Your Website.
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-indigo-100 mb-10 max-w-3xl mx-auto">
+                Get a professional, custom website built and managed for just <span class="font-semibold">$99/mo</span>.
+                No large upfront fees. No technical headaches.
+            </p>
+            <a href="tel:9013083923" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                Schedule Your Free Consultation
+            </a>
+        </div>
+    </section>
 
-  <p>I'm Aubrey Hayes. I make weird and wonderful GPTs.  
-  RPGs. Business assistants. Chatbots for your oddball ideas.  
-  Basically, if it runs software, I'm trying to find a way to hack it.</p>
+    <!-- Section 2: The Problem (Brand Confusion) -->
+    <section class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                We build websites. That's it.
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                The name "Keystone" is used by a lot of tech companies—for key management, software frameworks, and more. We don't do any of that. We have one simple mission: to give your small business a professional, effective, and affordable website.
+            </p>
+        </div>
+    </section>
 
-  <h2>💌 Get in Touch</h2>
-  <p>Email: <a href="mailto:aubrey.hayes47@gmail.com">aubrey.hayes47@gmail.com</a>  
-  <br>I promise I answer emails. Usually. Eventually. Probably.</p>
+    <!-- Section 3: How It Works -->
+    <section class="py-20 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Your New Website in 3 Simple Steps
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">A seamless process to get you online, fast.</p>
+            </div>
+            
+            <!-- 3-Step Process Grid -->
+            <div class="grid md:grid-cols-3 gap-10 lg:gap-16">
+                <!-- Step 1 -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <div class="flex-shrink-0 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                            1
+                        </div>
+                        <h3 class="ml-4 text-2xl font-bold text-gray-900">Discover</h3>
+                    </div>
+                    <p class="text-lg text-gray-700">
+                        We start with a quick call to understand your business, your customers, and your goals.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <div class="flex-shrink-0 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                            2
+                        </div>
+                        <h3 class="ml-4 text-2xl font-bold text-gray-900">Build</h3>
+                    </div>
+                    <p class="text-lg text-gray-700">
+                        We design and build a custom, mobile-friendly website that's optimized to turn visitors into customers.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                        <div class="flex-shrink-0 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                            3
+                        </div>
+                        <h3 class="ml-4 text-2xl font-bold text-gray-900">Launch & Manage</h3>
+                    </div>
+                    <p class="text-lg text-gray-700">
+                        We handle the launch, hosting, security, and all future updates. You get back to running your business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>© 2024 Keystone Web. Made with love, sarcasm, and a worrying number of browser tabs.</footer>
+    <!-- Section 4: The Offer (Pricing & Features) -->
+    <section id="pricing" class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Simple, All-Inclusive Pricing
+                </h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">One simple plan. Everything you need. No surprises.</p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- $99 Down -->
+                <div class="bg-gray-50 rounded-xl shadow-lg p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">One-Time Setup</h3>
+                    <div class="text-5xl font-extrabold text-indigo-600 mb-6">$99</div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg text-gray-700">Initial Design & Strategy Consultation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg text-gray-700">Custom Website Build (Up to 7 Pages)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg text-gray-700">Professional Copywriting & Content Setup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg text-gray-700">Search Engine Optimization (SEO) Setup</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- $99 Per Month -->
+                <div class="bg-indigo-600 text-white rounded-xl shadow-2xl p-8 transform lg:scale-105">
+                    <h3 class="text-2xl font-bold mb-2">Ongoing Service & Support</h3>
+                    <div class="text-5xl font-extrabold mb-6">$99 <span class="text-2xl font-semibold opacity-80">/ month</span></div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-400 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg">Secure, High-Speed Hosting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-400 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg">SSL Certificate Included</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-400 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg">Unlimited Edits & Content Updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-400 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg">24/7 Security Monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-400 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg">Software & Plugin Updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="check-icon flex-shrink-0 text-green-400 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                            <span class="ml-3 text-lg">No Long-Term Contracts (Cancel Anytime)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: The Comparison -->
+    <section class="py-20 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    The "Done-For-You" Service You've Been Missing
+                </h2>
+            </div>
+            
+            <!-- Comparison Grid -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Card 1: DIY Builders -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">DIY Builders (Wix, etc.)</h3>
+                    <p class="text-lg text-gray-700"><strong class="text-red-600">The Problem:</strong> You save money, but you waste dozens of hours you should be spending on your *real* business. When it breaks, you're the one fixing it.</p>
+                </div>
+                
+                <!-- Card 2: Traditional Agency -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Traditional Agency</h3>
+                    <p class="text-lg text-gray-700"><strong class="text-red-600">The Problem:</strong> A $5,000 - $10,000+ upfront cost is too much for a small business. Then, you still get charged $150/hour for every minor change.</p>
+                </div>
+
+                <!-- Card 3: Keystone (The Solution) -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border-2 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-4">Keystone Web Developers</h3>
+                    <p class="text-lg text-gray-700"><strong class="text-green-600">The Solution:</strong> The best of both worlds. A professional, custom-built site for a low setup fee, plus a predictable flat monthly rate that covers *everything*.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Who Is This For? -->
+    <section class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    We Partner With Businesses Like Yours
+                </h2>
+                <p class="text-lg text-gray-700">This service is perfect for local businesses that need a professional online presence without the hassle.</p>
+            </div>
+            
+            <!-- List of business types -->
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg text-gray-700">
+                <li class="flex items-start">
+                    <svg class="check-icon flex-shrink-0 text-indigo-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="ml-3">Local Services (Plumbers, Electricians)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="check-icon flex-shrink-0 text-indigo-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="ml-3">Home Services (Cleaning, Remodeling)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="check-icon flex-shrink-0 text-indigo-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="ml-3">Landscapers & Lawn Care</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="check-icon flex-shrink-0 text-indigo-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="ml-3">Local Professionals (Lawyers, Accountants)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="check-icon flex-shrink-0 text-indigo-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="ml-3">Restaurants & Cafes</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="check-icon flex-shrink-0 text-indigo-500 mt-1" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="ml-3">Brick-and-Mortar Shops</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 7: Final CTA -->
+    <section id="contact" class="bg-indigo-700 text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6">
+                Ready to Get Your Professional Website?
+            </h2>
+            <p class="text-xl md:text-2xl font-light text-indigo-100 mb-10 max-w-3xl mx-auto">
+                Let's chat for 15 minutes. No pressure, just a simple plan to help your business grow.
+            </p>
+            <!-- 
+                This button should link to your contact form, Calendly, or email.
+                I'll make it a mailto: link for now.
+            -->
+            <a href="tel:9013083923" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                Schedule Your Free Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg font-semibold mb-2">Keystone Web Developers</p>
+            <p class="mb-4">keystoneweb.dev</p>
+            <p class="text-sm">
+                &copy; 2025 Keystone Web Developers. All rights reserved.
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
