@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>24-Hour Website Fixes | Keystone Web Developers</title>
+  <meta name="description" content="Keystone Web Developers finds and fixes the first website problem costing a small business calls, bookings, or inquiries. Fixed scope. Upfront price. Delivered within 24 hours after required inputs.">
+  <style>
+    :root {
+      --ink: #102338;
+      --muted: #5c6b7a;
+      --paper: #f7f5ef;
+      --card: #ffffff;
+      --line: #dfe5e8;
+      --gold: #e6a93a;
+      --gold-dark: #9a6810;
+      --blue: #163d64;
+      --blue-deep: #0c2744;
+      --shadow: 0 18px 50px rgba(12, 39, 68, .11);
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue-deep);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+    .mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      color: var(--paper);
+      background: var(--blue);
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+    nav { color: var(--muted); font-size: 14px; }
+    nav a { text-decoration: none; margin-left: 20px; }
+    nav a:hover { color: var(--blue); }
+    .hero {
+      padding: 82px 0 64px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 58px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--gold-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 700px;
+      margin: 14px 0 20px;
+      color: var(--blue-deep);
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: .99;
+      letter-spacing: -.065em;
+    }
+    .hero p {
+      max-width: 620px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .dot {
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      border-radius: 99px;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(230,169,58,.16);
+    }
+    .visual {
+      position: relative;
+      min-height: 370px;
+      padding: 28px;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(230,169,58,.28), transparent 31%),
+        linear-gradient(145deg, var(--blue), var(--blue-deep));
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+    .visual:before {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      right: -90px;
+      bottom: -110px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(255,255,255,.04), 0 0 0 56px rgba(255,255,255,.035);
+    }
+    .visual-label {
+      position: relative;
+      color: #dce9f4;
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .visual h2 {
+      position: relative;
+      max-width: 380px;
+      margin: 70px 0 14px;
+      font-size: 31px;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+    .visual p {
+      position: relative;
+      max-width: 330px;
+      color: #c2d1df;
+      font-size: 16px;
+    }
+    .signal {
+      position: absolute;
+      right: 28px;
+      top: 28px;
+      padding: 9px 12px;
+      color: var(--blue-deep);
+      background: var(--gold);
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    section { padding: 68px 0; }
+    .section-head { max-width: 650px; margin-bottom: 28px; }
+    h2 {
+      margin: 0 0 10px;
+      color: var(--blue-deep);
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.06;
+      letter-spacing: -.045em;
+    }
+    .section-head p { margin: 0; color: var(--muted); font-size: 18px; }
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+    }
+    .offer {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(12,39,68,.04);
+    }
+    .offer.featured { border: 2px solid var(--gold); box-shadow: var(--shadow); }
+    .offer-kicker {
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .offer h3 { margin: 10px 0 4px; color: var(--blue-deep); font-size: 25px; letter-spacing: -.03em; }
+    .price { margin: 12px 0 18px; color: var(--blue-deep); font-size: 43px; font-weight: 900; letter-spacing: -.06em; }
+    .price small { color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: 0; }
+    .offer p { margin: 0; color: var(--muted); }
+    ul { padding-left: 19px; margin: 22px 0 28px; }
+    li { margin: 9px 0; }
+    .offer li::marker { color: var(--gold-dark); }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 12px 18px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .button:hover { background: var(--blue-deep); transform: translateY(-1px); }
+    .offer .button { margin-top: auto; }
+    .fine { margin-top: 12px !important; color: var(--muted); font-size: 13px; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+    .step {
+      padding: 24px;
+      background: rgba(255,255,255,.56);
+      border-top: 3px solid var(--gold);
+      border-radius: 16px;
+    }
+    .step-number { color: var(--gold-dark); font-size: 13px; font-weight: 900; letter-spacing: .12em; }
+    .step h3 { margin: 9px 0 7px; font-size: 20px; color: var(--blue-deep); }
+    .step p { margin: 0; color: var(--muted); }
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .detail {
+      padding: 26px;
+      background: var(--blue-deep);
+      color: #fff;
+      border-radius: var(--radius);
+    }
+    .detail.light { color: var(--ink); background: #fff; border: 1px solid var(--line); }
+    .detail h3 { margin: 0 0 10px; font-size: 21px; }
+    .detail p { margin: 0; color: #c8d6e2; }
+    .detail.light p { color: var(--muted); }
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 34px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: var(--radius);
+    }
+    .contact h2 { color: #fff; font-size: 32px; }
+    .contact p { margin: 0; color: #c8d6e2; }
+    .contact .button { color: var(--blue-deep); background: var(--gold); white-space: nowrap; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 0 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--blue); }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; padding-top: 50px; }
+      .visual { min-height: 315px; }
+      .offers, .details { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      header { align-items: flex-start; }
+      nav { display: none; }
+      h1 { font-size: 49px; }
+      .hero p { font-size: 18px; }
+      .offer, .detail, .contact { padding: 24px; }
+      .contact { align-items: flex-start; flex-direction: column; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="Keystone Web Developers home">
+        <span class="mark">K</span>
+        Keystone Web Developers
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#offers">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Fixed scope · Upfront price · 24-hour delivery</div>
+          <h1>Your website may be losing the lead before you ever see it.</h1>
+          <p>Keystone Web Developers finds the highest-friction point on a small-business website and either shows you exactly what to change or fixes the first page customers see.</p>
+          <div class="hero-note"><span class="dot"></span> Launch pricing for a limited number of businesses this week.</div>
+        </div>
+        <div class="visual" aria-label="Website conversion service summary">
+          <div class="signal">NO LONG CONTRACT</div>
+          <div class="visual-label">The first customer decision</div>
+          <h2>Can a stranger understand the offer and take the next step?</h2>
+          <p>We make that answer clearer—on mobile, where many local customers start.</p>
+        </div>
+      </section>
+
+      <section id="offers">
+        <div class="section-head">
+          <h2>Choose the smallest useful intervention.</h2>
+          <p>No full redesign pitch. Start with a prioritized diagnosis, or pay for one focused repair.</p>
+        </div>
+        <div class="offers">
+          <article class="offer">
+            <div class="offer-kicker">Start here</div>
+            <h3>Website Opportunity Audit</h3>
+            <div class="price">$99 <small>one time</small></div>
+            <p>A customized, plain-English teardown of one public business website.</p>
+            <ul>
+              <li>Five prioritized conversion problems</li>
+              <li>Rewritten headline and primary call-to-action</li>
+              <li>Mobile and trust checks</li>
+              <li>Short action plan delivered within 24 hours</li>
+            </ul>
+            <a class="button" href="https://buy.stripe.com/6oUeVfafL1KX7qF1Di1oI02">Get the audit</a>
+            <p class="fine">No login required. You provide the public URL at checkout.</p>
+          </article>
+
+          <article class="offer featured">
+            <div class="offer-kicker">For the fastest improvement</div>
+            <h3>Lead Capture Fix</h3>
+            <div class="price">$299 <small>one time</small></div>
+            <p>A focused repair of one existing page or one replacement landing page.</p>
+            <ul>
+              <li>Clearer offer, headline, and call-to-action</li>
+              <li>Mobile layout and trust-element cleanup</li>
+              <li>One simple lead path: phone, email, booking, or existing form</li>
+              <li>One revision; delivered within 24 hours after required inputs</li>
+            </ul>
+            <a class="button" href="https://buy.stripe.com/bJe00lfA50GTeT73Lq1oI03">Reserve a fix slot</a>
+            <p class="fine">Three launch slots. Domain, hosting, paid plugins, and complex integrations are not included.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-head">
+          <h2>Simple enough to finish.</h2>
+          <p>The service is intentionally narrow so the work can move quickly and the price stays understandable.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">01 / SEND</div>
+            <h3>Send the URL</h3>
+            <p>Choose an offer and provide the website, email, and the outcome you want the site to support.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02 / FOCUS</div>
+            <h3>Find the bottleneck</h3>
+            <p>We focus on the first customer decision: what the business does, why it matters, and what to do next.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03 / DELIVER</div>
+            <h3>Receive the work</h3>
+            <p>You receive the audit or the focused repair within the stated window after the required information is available.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="details">
+          <div class="detail">
+            <h3>Good fit</h3>
+            <p>Local service businesses, professional services, home services, practices, shops, and solo operators whose website needs to create a call, inquiry, booking, or quote request.</p>
+          </div>
+          <div class="detail light">
+            <h3>Clear boundaries</h3>
+            <p>This is not a promise of rankings, traffic, or revenue. The fix covers one page and one simple lead path; larger builds, hosting, ads, and complex integrations are separate work.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact">
+          <div>
+            <h2>Have a website that feels “almost there”?</h2>
+            <p>Send the URL and the business outcome you care about. We will tell you whether the audit or the fix is the better starting point.</p>
+          </div>
+          <a class="button" href="mailto:aubrey.hayes47@gmail.com?subject=Website%20Opportunity%20Question">Email Keystone</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Keystone Web Developers</span>
+      <span><a href="mailto:aubrey.hayes47@gmail.com">aubrey.hayes47@gmail.com</a> · <a href="https://aubreyhayes47.github.io/">About Aubrey</a></span>
+    </footer>
+  </div>
+</body>
+</html>
